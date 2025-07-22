@@ -14,6 +14,10 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path:'/home', //Best for SEO but not for use experience
+      redirect: '/',
+    },
+    {
       path: '/favorites',
       name: 'favorites',
       component: FavoritesView,
