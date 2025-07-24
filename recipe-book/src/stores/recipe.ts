@@ -14,13 +14,13 @@ export const useRecipeStore = defineStore('recipe', ()=>
 
     const recipes = ref<Recipe[]>([])
     const addRecipe = (recipe: NewRecipe)=>{
-      const NewRecipe ={
+      const newRecipe ={
         id: Date.now().toString(),
       ...recipe
       }
 
-      recipes.value.push(NewRecipe)
-      return NewRecipe
+      recipes.value.push(newRecipe)
+      return newRecipe
     }
     return { recipes , addRecipe}
   }
