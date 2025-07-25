@@ -20,18 +20,15 @@
 
 <script setup lang="ts">
   import { useRecipeStore } from '@/stores/recipe';
-  import { ref, computed } from 'vue';
+  import { computed, ref } from 'vue';
   import { RouterLink } from 'vue-router';
 
-  const recipeStore = useRecipeStore();
-  const searchRecipe = ref('')
 
+  const searchRecipe = ref('')
   const filteredRecipes = computed(
-    ()=> recipeStore.recipes.filter(
-      recipe=>recipe.name.toLocaleLowerCase().includes(
-        searchRecipe.value.toLocaleLowerCase()
-      )
-    )
+    ()=>recipeStore.filteredRecipes(searchRecipe.value)
   )
+  const recipeStore = useRecipeStore();
+
 </script>
 
