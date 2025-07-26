@@ -4,14 +4,14 @@
   </div>
 
   <div>
-    <form @submit.prevent="updateRecipe">
+    <form @submit.prevent="updateRecipe" class="space-y-4">
     <div>
-      <input type="text" v-model="name" placeholder=recipe?.name required/>
+      <input type="text" v-model="name" placeholder=recipe?.name class="p-2 bg-white border-rounded  w-full" required/>
     </div>
     <div>
-      <textarea  v-model="description" placeholder=recipe?.description required/>
+      <textarea  v-model="description" placeholder=recipe?.description class="p-2 bg-white border-rounded  w-full" required/>
     </div>
-    <button type="submit">
+    <button type="submit" class="px-4 py-2 bg-orange-500 text-white hover:bg-orange-800">
       Save
     </button>
   </form>
