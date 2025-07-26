@@ -3,6 +3,30 @@
 
 Um livro de receitas moderno desenvolvido com **Vue 3**, **TypeScript**, **Pinia**, **Tailwind CSS** e **Vue Router**. A aplicação é uma **SPA** com reatividade em tempo real, armazenamento local persistente e interface amigável para adicionar, editar, visualizar e favoritar receitas.
 
+```mermaid
+graph TD
+  A[User Adds a Recipe via AddRecipeView] -->|uses store.addRecipe| B[recipeStore adds recipe with generated id]
+  B --> C[HomeView loads recipeStore.recipes]
+  B --> D[FavoritesView filters store.favoriteRecipes]
+  C -->|Click on recipe| E[RecipeView loads store.getRecipeById]
+  E -->|Click Edit| F[EditRecipeView loads store.getRecipeById]
+  F -->|User edits & submits updateRecipe| G[store.editRecipe]
+  G --> C
+  G --> D
+  E -->|Click Favorite| H[toggleFavorite recipe.id]
+  H --> D
+
+  style A fill:#FDE68A,stroke:#B45309,color:#78350F
+  style B fill:#BBF7D0,stroke:#15803D,color:#166534
+  style C fill:#E0F2FE,stroke:#0284C7,color:#0369A1
+  style D fill:#FCE7F3,stroke:#DB2777,color:#9D174D
+  style E fill:#E2E8F0,stroke:#475569,color:#1E293B
+  style F fill:#FEF9C3,stroke:#CA8A04,color:#92400E
+  style G fill:#C7D2FE,stroke:#6366F1,color:#4338CA
+  style H fill:#FCD34D,stroke:#D97706,color:#92400E
+
+```
+
 ---
 
 ### 🚀 Funcionalidades
