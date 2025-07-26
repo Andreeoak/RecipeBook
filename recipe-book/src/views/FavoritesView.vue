@@ -5,6 +5,6 @@ import { useRecipeStore } from '@/stores/recipe';
 </script>
 
 <template>
-  <h1>Favorite Recipes</h1>
+  <h1 class="text-2xl font-bold mb-4">Favorite Recipes</h1>
   <RecipeList :recipes="store.favoriteRecipes"/>
 </template>

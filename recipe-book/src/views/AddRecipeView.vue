@@ -1,5 +1,5 @@
 <template>
-  <div>Add form</div>
+  <h1 class="text-2xl font-bold mb-4">Add form</h1>
   <form @submit.prevent="addRecipe">
     <div>
       <input type="text" v-model="name" placeholder="Recipe name" required/>

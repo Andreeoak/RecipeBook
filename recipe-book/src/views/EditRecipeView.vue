@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Edit {{ originalName }} recipe</h1>
+    <h1 class="text-2xl font-bold mb-4" >Edit {{ originalName }} recipe</h1>
   </div>
 
   <div>
