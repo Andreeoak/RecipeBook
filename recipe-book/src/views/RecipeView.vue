@@ -6,16 +6,20 @@
     <p>{{ recipe?.description }}</p>
 
   </div>
+  <div>
+    <li>
+      <RouterLink :to="{name:'edit-recipe', params:{id: recipe?.id}}">Edit Recipe</RouterLink>
+    </li>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { useRecipeStore } from '@/stores/recipe';
 import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
 
 const route = useRoute();
 
-console.log(route.params.id);
 const recipeStore = useRecipeStore()
 
 const recipe = computed (() => recipeStore.getRecipeById(route.params.id as string))
